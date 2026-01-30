@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Krathika ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px 20px;
+        width: 90%;
+        max-width: 360px;
+        animation: fadeIn 2s ease;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        animation: pulse 2s infinite;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    .heart {
+        position: absolute;
+        color: rgba(255,255,255,0.85);
+        font-size: 20px;
+        animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) scale(0.5);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.2);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.08);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Happy Birthday ❤️</h1>
+    <h2>Krathika</h2>
+    <p>
+        Today is special,<br>
+        because you make the world<br>
+        more beautiful just by being in it.<br><br>
+        May your dreams come true,<br>
+        and your smile never fade 💕
+    </p>
+</div>
+
+<!-- Floating Hearts -->
+<script>
+    const hearts = ["❤️","💖","💕","💘","💗"];
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }, 400);
+</script>
+
+</body>
+</html>
